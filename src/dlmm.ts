@@ -20,7 +20,7 @@ export class Dlmm {
             throw "Only testnet and mainnet networks are allowed";
         };
     }
-    createPoolInput(
+    createPool(
         tokenX: string,
         tokenY: string,
         activeId: number,
@@ -61,7 +61,7 @@ export class Dlmm {
             functionArguments: [tokenX, tokenY, activeId, binStep, baseFactor, filterPeriod, decayPeriod, reductionFactor, variableFeeControl, maxVolatilityAccum, protocolShare]
         }
     }
-    addLiquidityInput(
+    addLiquidity(
         poolObj: string,
         amountX: number,
         amountY: number,
