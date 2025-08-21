@@ -1,6 +1,6 @@
 import { Network, InputEntryFunctionData } from "@aptos-labs/ts-sdk"
 import { BASIS_POINT_MAX, MAX_BIN_ID, MAX_FEE, MAX_PROTOCOL_SHARE } from "./constants";
-import { DlmmPool, Pagination } from "./types";
+import { Bin, DlmmPool, Pagination } from "./types";
 
 type Config = {
     network: Network;
@@ -318,5 +318,22 @@ export class Dlmm {
         }
 
         return (await res.json()) as { data: DlmmPool[]; pagination: Pagination };
+    }
+    async getBins(
+        addr: string,
+    ): Promise<{ data: Bin[] }> {
+        /**
+         * Get the list of Bins in a pool.
+         * 
+         * @param addr - Address of pool
+         * @returns { data: Bin[] } A list of bins.
+         */
+        const res = await fetch(`${this.api}/sdk/dlmm/get-bins/${addr}`);
+
+        if (!res.ok) {
+            throw new Error("Unknown API error");
+        }
+
+        return (await res.json()) as { data: Bin[] };
     }
 }

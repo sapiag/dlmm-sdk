@@ -21,7 +21,7 @@ export interface DlmmPool {
     static_fee_params: StaticFeeParams;
 }
 
-type StaticFeeParams = {
+export type StaticFeeParams = {
     base_factor: bigint;
     filter_period: bigint;
     decay_period: bigint;
@@ -35,7 +35,7 @@ type StaticFeeParams = {
     last_swap_ts: bigint;
 }
 
-type Bin = {
+export type Bin = {
     pool_addr: string;
     bin_id: number;
     fee_growth_x: number;

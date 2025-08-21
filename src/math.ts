@@ -46,3 +46,4 @@ export function getVariableFee(binStep: number, variableFeeControl: number, vola
     };
     return (fee / 1e18) * 100
 }
+
