@@ -11,3 +11,4 @@
 - `get common pools by token addresses (with bins)`
 - `spot, curve, bid_ask distribution`
 - `data structure for pool integration`
+- `examples`
